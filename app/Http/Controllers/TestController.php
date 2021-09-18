@@ -18,10 +18,10 @@ class TestController extends Controller
      */
     public function index(): JsonResponse
     {
-        $test = Test::all();
+        $tests = Test::all();
         Log::info("■■■■■■■■■■■■");
-        Log::info($test->toArray());
+        Log::info($tests->toArray());
         Log::info("■■■■■■■■■■■■");
-        return response()->json($this->camelizeRecursive($test->toArray()), 200);
+        return response()->json($this->camelizeRecursive($tests->toArray()), 200);
     }
 }
